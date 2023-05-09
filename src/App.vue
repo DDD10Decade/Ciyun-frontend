@@ -1,26 +1,26 @@
 <template>
-    <el-menu class="el-menu-demo" mode="horizontal" :ellipsis="false"
-             style="background-color: #a0cfff;padding: 0;margin: auto;width: 100%;height: 100%">
-        <el-menu-item>
-            <router-link to="/index">
-                <MostlyCloudy class="" style="width: 50px;height: 60px"></MostlyCloudy>
-                index
-            </router-link>
-        </el-menu-item>
-        <el-menu-item>
-            <router-link to="/about">
-                <Cloudy class="" style="width: 50px;height: 60px"></Cloudy>
-                About
-            </router-link>
-        </el-menu-item>
-    </el-menu>
-    <el-main>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="margin-top:-10px">
+        <el-menu class="el-menu-demo navimg" mode="horizontal" :ellipsis="false"
+                 style="padding: 0;margin: auto;width: 100%;height: 100%">
+            <el-menu-item>
+                <router-link to="/index" class="nav-link">
+                    <MostlyCloudy class="" style="width: 50px;height: 60px"></MostlyCloudy>
+                    主页
+                </router-link>
+            </el-menu-item>
+            <el-menu-item>
+                <router-link to="/about" class="nav-link">
+                    <Cloudy class="" style="width: 50px;height: 60px"></Cloudy>
+                    其他
+                </router-link>
+            </el-menu-item>
+        </el-menu>
+    </nav>
+    <el-main style="margin-top:-25px;margin-left: -20px">
         <router-view/>
-        <hello-world></hello-world>
     </el-main>
 </template>
 <script>
-import HelloWorld from "@/components/HelloWorld.vue";
 import {Cloudy, MostlyCloudy} from "@element-plus/icons-vue";
 
 export default {
@@ -28,7 +28,6 @@ export default {
     components: {
         Cloudy,
         MostlyCloudy,
-        HelloWorld
     }
 }
 </script>
@@ -44,12 +43,21 @@ export default {
 el-menu {
     display: flex;
     justify-content: space-between;
-    padding-left: 0;
+    padding: 0;
     align-items: center;
 }
 
 nav {
-    padding: 30px;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+.navimg {
+    background: url("../src/assets/navbg.jpg") no-repeat center/cover;
+//background-image: url("../src/assets/navbg.jpg"); //background-size: 100%; //background-repeat:no-repeat;
 }
 
 nav a {
