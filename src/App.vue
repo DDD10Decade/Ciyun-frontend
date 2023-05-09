@@ -1,21 +1,23 @@
 <template>
-    <div class="comment-layout">
-        <el-menu class="el-menu-demo" mode="horizontal" :ellipsis="false">
-            <el-menu-item>
-                <router-link to="/index">
-                    <MostlyCloudy class="" style="width: 50px;height: 60px"></MostlyCloudy>
-                    index
-                </router-link>
-            </el-menu-item>
-            <el-menu-item>
-                <router-link to="/about">
-                    <Cloudy class="" style="width: 50px;height: 60px"></Cloudy>
-                    About
-                </router-link>
-            </el-menu-item>
-        </el-menu>
-    </div>
-    <router-view/><hello-world></hello-world>
+    <el-menu class="el-menu-demo" mode="horizontal" :ellipsis="false"
+             style="background-color: #a0cfff;padding: 0;margin: auto;width: 100%;height: 100%">
+        <el-menu-item>
+            <router-link to="/index">
+                <MostlyCloudy class="" style="width: 50px;height: 60px"></MostlyCloudy>
+                index
+            </router-link>
+        </el-menu-item>
+        <el-menu-item>
+            <router-link to="/about">
+                <Cloudy class="" style="width: 50px;height: 60px"></Cloudy>
+                About
+            </router-link>
+        </el-menu-item>
+    </el-menu>
+    <el-main>
+        <router-view/>
+        <hello-world></hello-world>
+    </el-main>
 </template>
 <script>
 import HelloWorld from "@/components/HelloWorld.vue";
@@ -37,6 +39,13 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+}
+
+el-menu {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+    align-items: center;
 }
 
 nav {
