@@ -1,8 +1,9 @@
 <template>
     <div>
         <h2>小词云</h2>
-        <div id="word-text-area">
-            <el-input type="textarea" :rows="10" placeholder="请输入内容" v-model="textarea"></el-input>
+        <div id="word-text-area" style="width: 70%;margin: auto">
+            <el-input type="textarea" :autosize="{minRows:4,maxRows:4}" placeholder="请输入内容"
+                      v-model="textarea"></el-input>
             <div id="word-img">
                 <el-image :src="'data:image/png;base64,'+pic " :fit="fit">
                     <div class="image-slot">
@@ -12,16 +13,30 @@
             </div>
             <div id="word-operation">
                 <el-row>
-                    <el-button type="primary" @click="onSubmit" round>生成词云</el-button>
-                    <el-button type="success" @click="onDownload" round>下载图片</el-button>
+                    <el-button type="primary" plain @click="onSubmit" round :icon="Select" style="margin: auto">
+                        生成词云
+                    </el-button>
+                    <el-button type="success" plain @click="onDownload" round :icon="Download" style="margin: auto">
+                        下载图片
+                    </el-button>
                 </el-row>
             </div>
         </div>
     </div>
 </template>
 <script>
+import {Download, Select} from "@element-plus/icons-vue";
+
 export default {
     name: "WordCloud",
+    computed: {
+        Download() {
+            return Download
+        },
+        Select() {
+            return Select
+        }
+    },
     data() {
         return {
             textarea: "",

@@ -10,6 +10,11 @@ const routes = [
         path: "/index",
         name: "index",
         component: WordCloud,
+    },
+    {
+        path: "/about",
+        name: "about",
+        component: () => import('../views/AboutView.vue')
     }
 ]
 

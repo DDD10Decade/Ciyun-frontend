@@ -2,7 +2,7 @@
     <div class="hello">
         <h1>{{ msg }}</h1>
     </div>
-    <button @click="test()">CheckThis</button>
+    <el-button @click="test">CheckThis</el-button>
     <div>{{ text }}</div>
 </template>
 
