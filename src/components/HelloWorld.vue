@@ -4,7 +4,6 @@
     </div>
     <button @click="test()">CheckThis</button>
     <div>{{ text }}</div>
-    <div></div>
 </template>
 
 <script>
